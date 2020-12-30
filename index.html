@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kwitter</title>
+    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="kwitter.js"></script>
+</head>
+
+<body>
+    <span>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 login_div">
+            <img src="logo.png" class="logo" style="height: 32.5px; width: auto; margin-top: 16%;">
+            <h3 style="margin-top: 23px; line-height: 40px; font-weight: bolder; font-size: 30px; padding-right: 120px; color: white; margin-left: 8px;">See what’s happening in the world right now</h3>
+            <h4 style="margin-left: 8px; margin-top: 11.5%; font-weight: 700; font-size: 15px; color: white; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;">Join Kwitter today.</h4>
+        <button id="login_button" class="btn btn-primary" style="margin-top: 12.5%; margin-left: 8px; width: 75%; font-weight: 700; font-size: 15px; min-width: calc(62.79px); min-height: 39px; border-radius: 9999px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;" data-toggle="modal" data-target="#chairperson">Log in</button>
+        </div>
+        <div id="chairperson" class="modal fade" style="font-size: 20px; text-align: left; border-radius: 25px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;">
+        <div class="modal-dialog" style="border-radius: 25px;">
+            <div class="modal-content" style="background-color: rgb(21, 32, 43);">
+                <div class="modal-header" style="background-color: rgb(21, 32, 43);">
+                    <button type="button" class="close" data-dismiss="modal" style="color: tomato; outline: none;"><i class="fa fa-times-circle" style="font-size: 30px; color: red"></i></button>
+                    <h4 class="modal-title" style="font-weight: bolder; color: white; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;">Create your account</h4>
+                </div>
+                <div class="modal-body" style="background-color: rgb(21, 32, 43); padding-bottom: 250px;">
+                    <center>
+                    <img src="logo.png" style="height: 10px; width: auto; width: 10%; height: auto;" class="img-model img-responsive">
+                    </center>
+                    <center>
+                        <div style="margin-top: 20%;">
+                            <label style="color: dodgerblue; font-size: 13px; font-weight: 400; font-family: 'Acme', sans-serif;">User Name - </label>
+                            <input id="user_name" style="margin-top: 20px;">
+                        </div>
+                        <button id="login_button" class="btn btn-primary" onclick="login();" style="float: right; margin-top: 20%; margin-right: 8px; width: 25%; font-weight: 400; font-size: 15px; min-width: calc(62.79px); min-height: 39px; border-radius: 9999px; font-family: 'Acme', sans-serif; " data-toggle="modal" data-target="#chairperson">Log in <i class="fa fa-mail-forward"></i></button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+        <center>
+            </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="bird_box">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="follow">
+                <i class="fa fa-search" style="font-size: 23px; margin-left: 0px;"></i>
+                <label><h2 style="margin-left: 20px; font-size: 19px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;">Follow your interests.</h2></label>
+                </div>
+                <div class="people">
+                <i class="fa fa-users" style="font-size: 23px; margin-left: 0px;"></i>
+                <label><h2 style="margin-left: 20px; font-size: 19px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;">Hear what people are talking about.</h2></label>
+                </div>
+                <div class="join">
+                <i class="fa fa-comments-o" style="font-size: 23px; margin-left: 0px;"></i>
+                <label><h2 style="margin-left: 20px; font-size: 19px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;">Join the conversation.</h2></label>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </center>
+    </span>
+</body>
+
+</html>
