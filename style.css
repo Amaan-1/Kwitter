@@ -8,7 +8,6 @@ body {
 
 body {
     background-color: rgb(21, 32, 43);
-    /*font-family: 'Patrick Hand', cursive;*/
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -37,8 +36,8 @@ body {
     background-size: cover;
 }
 
-input {
-    border: 2px solid #aaa;
+#user_name {
+    border: 2px solid #ffffff;
     border-radius: 4px;
     margin: 8px 0;
     color: white;
@@ -49,7 +48,29 @@ input {
     font-family: 'Acme', sans-serif;
 }
 
-input:focus {
+#user_name:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+    background-color: rgba(29, 161, 242, 0.5);
+    color: rgb(21, 32, 43);
+    font-family: 'Acme', sans-serif;
+}
+
+#add_room {
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    margin: 8px 0;
+    color: white;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    transition: .3s ease;
+    font-family: 'Acme', sans-serif;
+    width: 80%;
+    height: 30px;
+}
+
+#add_room:focus {
     border-color: dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
     background-color: rgba(29, 161, 242, 0.5);
@@ -101,6 +122,22 @@ input:focus {
 #login_button:hover {
     color: rgb(29, 161, 242);
     background-color: rgb(22, 45, 64);
+}
+
+#add_room_hit {
+    width: 80%;
+    border-radius: 15px;
+    background-color: rgb(21, 32, 43);
+    color: #449d44;
+    border-color: #449d44;
+    transition: 0.5s ease;
+    width: 15%;
+    outline: none;
+}
+
+#add_room_hit:hover {
+    color: #449d44;
+    background-color: #1d291d;
 }
 
 .room_name {

@@ -12,7 +12,6 @@ firebase.initializeApp(firebaseConfig);
 
 function login() {
     var username = document.getElementById("user_name").value;
-    console.log(username);
-    firebase.database().ref("/").child(username).update({ purpose: "adding_user" });
+    localStorage.setItem("User_Name", username);
     window.location = "kwitter_room.html";
 }

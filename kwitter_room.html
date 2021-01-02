@@ -15,7 +15,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+        input {
+            border: 2px solid #ffffff;
+            border-radius: 4px;
+            margin: 8px 0;
+            color: white;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+            transition: .3s;
+            font-family: 'Acme', sans-serif;
+            width: 80%;
+            height: 30px;
+        }
+        
+        input:focus {
+            border-color: dodgerBlue;
+            box-shadow: 0 0 8px 0 dodgerBlue;
+            background-color: rgba(29, 161, 242, 0.5);
+            color: rgb(21, 32, 43);
+            font-family: 'Acme', sans-serif;
+        }
+        
+        label {
+            font-family: 'Acme', sans-serif;
+        }
+        
+        #output {
+            box-shadow: inset 8px 8px 10px grey, 8px 8px 10px black;
+            margin-bottom: 20px;
+        }
+    </style>
 
 </head>
 
@@ -29,17 +62,17 @@
 				<img src="m2.png">
 			</sup>
             </h1>
-            <h3 class="color_white" id="user_indentity"></h3>
+            <h3 class="color_white" id="user_indentity" style="font-family: 'Yeon Sung';"></h3>
             <div class="form-group input_div_room_page">
-                <label>#Add Room:</label>
+                <label style="color: white; font-family: ;">#Add Room:</label>
                 <input type="text" id="add_room" class="form-control" placeholder="ROOM - NAME">
             </div>
             <button id="add_room_hit" onclick="add();" class="btn btn-success">#Add Room</button>
-            <h3 class="color_white">#TRENDINGROOMS</h3>
-            <div id="output"></div>
+            <h3 class="color_white" style="font-family: 'Acme', sans-serif;">#TRENDING-ROOMS</h3>
+            <div id="output" style="font-family: 'Yeon Sung';"></div>
         </center>
     </div>
-    <script src="z_room.js"></script>
+    <script src="kwitter_room.js"></script>
 </body>
 
 </html>
