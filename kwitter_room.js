@@ -27,7 +27,7 @@ getData();
 function redirectToRoomName(name) {
     console.log(name);
     localStorage.setItem("room_name", name);
-    window.location = "index.html";
+    window.location = "kwitter_page.html";
 }
 
 
@@ -42,4 +42,10 @@ function add() {
     });
     localStorage.setItem("room_name", room_name);
     window.location = "kwitter_page.html";
+}
+
+function out() {
+    localStorage.removeItem("add_room");
+    localStorage.removeItem("User_Name");
+    window.location = "index.html";
 }

@@ -192,8 +192,21 @@
         }
         
         #logout {
-            font-size: 20px;
-            float: right;
+            font-size: 14px;
+            font-weight: 700;
+            min-width: calc(62.79px);
+            min-height: 30px;
+            background-color: rgb(29, 161, 242);
+            color: white;
+            transition: 0.5s ease;
+            outline-style: none;
+            border-radius: 9999px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        #logout:hover {
+            background-color: rgb(26, 145, 218);
+            color: white;
         }
         
         #output {
@@ -255,7 +268,7 @@
 
 <body>
     <div class="container">
-        <button id="logout" onclick="out();" class="glyphicon glyphicon-log-out btn btn-danger">Logout</button>
+        <button id="logout" onclick="out();" class="btn btn-info" style="margin-top: 2.5%;">Log out&nbsp;<i class="fa fa-sign-out" style="font-size: 20px; vertical-align: middle;"></i></button>
         <center>
             <h1 class="header">
                 KWITTER
@@ -265,7 +278,7 @@
             </h1>
             <h3 class="color_white" id="user_indentity" style="font-family: 'Yeon Sung';"></h3>
             <div class="form-group input_div_room_page">
-                <label style="color: white; font-family: ;">#Add Room:</label>
+                <label style="color: white; font-family: 'Acme', sans-sarif;">#Add Room:</label>
                 <input type="text" id="add_room" class="form-control" placeholder="ROOM - NAME">
             </div>
             <button id="add_room_hit" onclick="add();" class="btn btn-success">#Add Room</button>
