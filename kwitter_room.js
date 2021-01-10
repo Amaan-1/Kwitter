@@ -24,9 +24,9 @@ function getData() {
 getData();
 
 
-function redirectToRoomName(name) {
-    console.log(name);
-    localStorage.setItem("room_name", name);
+function redirectToRoomName(room_name) {
+    console.log(room_name);
+    localStorage.setItem("room_name", room_name);
     window.location = "kwitter_page.html";
 }
 

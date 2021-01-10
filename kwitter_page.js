@@ -11,7 +11,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 function getData() {
-    firebase.database().ref("/" + room_name).on('value', function(snapshot) {
+    firebase.database().ref("/" + ROOM).on('value', function(snapshot) {
         document.getElementById("output").innerHTML = "";
         snapshot.forEach(function(childSnapshot) {
             childKey = childSnapshot.key;
@@ -19,32 +19,50 @@ function getData() {
             if (childKey != "purpose") {
                 firebase_message_id = childKey;
                 message_data = childData;
-                //Start code
-
-                //End code
+                console.log(firebase_message_id);
+                console.log(message_data);
+                var name = message_data["name"];
+                var message = message_data["message"];
+                var like = message_data["like"];
+                var name_tag = "<h4 id='name_display'>" + name + "<img src='tick.png'>" + "</h4><br>";
+                var message_tag = "<h4 id='message_display'>" + message + "</h4><br>";
+                var like_button = "<button id='" + firebase_message_id + "' class='btn btn-info button_like' onclick='update_like(this.id)' value='" + like + "'>";
+                var span_tag = "<span class='glyphicon glyphicon-thumbs-up'>" + like + "</button>";
+                var row = "<div id='thing'>" + name_tag + message_tag + like_button + span_tag + "</div>";
+                document.getElementById("output").innerHTML = row;
             }
         });
     });
 }
 getData();
 
+function like_button() {
+    console.log("liked" + message);
+    button_id = message_id;
+    likes = document.getElementById("button_id").value;
+    updated_links = Number(likes) + 1;
+    console.log(updated_links);
+    firebase.database().ref(ROOM).child(message_id).update({
+        like: updated_links
+    });
+}
 
 var USERNAME = localStorage.getItem("User_Name");
-var ROOM = localStorage.getItem("add_room");
+var ROOM = localStorage.getItem("room_name");
 
 function send() {
-    var msg = document.getElementById("msg").value;
-    console.log(msg);
+    var msg_input = document.getElementById("msg").value;
+    console.log(msg_input);
     firebase.database().ref(ROOM).push({
         name: USERNAME,
-        messasge: msg,
+        message: msg_input,
         like: 0
     });
     document.getElementById("msg").value = "";
 }
 
 function out() {
-    localStorage.removeItem("add_room");
+    localStorage.removeItem("room_name");
     localStorage.removeItem("User_Name");
     window.location = "index.html";
 }
