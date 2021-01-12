@@ -11,6 +11,10 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+#tick_logo {
+    height: 20px;
+}
+
 .header {
     color: white;
     font-family: 'Yeon Sung';

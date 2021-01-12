@@ -10,6 +10,10 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+
+var USERNAME = localStorage.getItem("User_Name");
+var ROOM = localStorage.getItem("room_name");
+
 function getData() {
     firebase.database().ref("/" + ROOM).on('value', function(snapshot) {
         document.getElementById("output").innerHTML = "";
@@ -24,7 +28,7 @@ function getData() {
                 var name = message_data["name"];
                 var message = message_data["message"];
                 var like = message_data["like"];
-                var name_tag = "<h4 id='name_display'>" + name + "<img src='tick.png'>" + "</h4><br>";
+                var name_tag = "<h4 id='name_display'>" + name + "<img src='tick.png' id='tick_logo'>" + "</h4><br>";
                 var message_tag = "<h4 id='message_display'>" + message + "</h4><br>";
                 var like_button = "<button id='" + firebase_message_id + "' class='btn btn-info button_like' onclick='update_like(this.id)' value='" + like + "'>";
                 var span_tag = "<span class='glyphicon glyphicon-thumbs-up'>" + like + "</button>";
@@ -36,19 +40,17 @@ function getData() {
 }
 getData();
 
-function like_button() {
-    console.log("liked" + message);
+function update_like(message_id) {
+    console.log("liked" + message_id);
     button_id = message_id;
-    likes = document.getElementById("button_id").value;
-    updated_links = Number(likes) + 1;
-    console.log(updated_links);
+    likes = document.getElementById(button_id).value;
+    updated_like = Number(likes) + 1;
+    console.log(updated_like);
     firebase.database().ref(ROOM).child(message_id).update({
-        like: updated_links
+        like: updated_like
     });
 }
 
-var USERNAME = localStorage.getItem("User_Name");
-var ROOM = localStorage.getItem("room_name");
 
 function send() {
     var msg_input = document.getElementById("msg").value;
